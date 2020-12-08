@@ -22,6 +22,7 @@ export default function ListItem({ employees, letter }) {
 			'selectedEmployees',
 			JSON.stringify(newSessionData)
 		)
+
 		updateSelectedEmployees()
 	}
 

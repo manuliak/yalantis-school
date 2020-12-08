@@ -28,15 +28,13 @@ function App() {
 		)
 			.then(function (response) {
 				if (response.status !== 200) {
-					console.log(`Error. Status Code: ${response.status}`)
+					console.log(`Error. Status code: ${response.status}`)
 					return
 				}
 
-				// Examine the text in the response
 				response.json().then(function (data) {
 					setEmployeesData(data)
 					setLoadingStatus(true)
-					console.log(data)
 				})
 			})
 			.catch(function (err) {
@@ -70,6 +68,10 @@ function App() {
 							<Route path="/employees">
 								<Employees />
 							</Route>
+							<Route
+								path="*"
+								component={() => <p>Page not found</p>}
+							/>
 						</Switch>
 					</div>
 
